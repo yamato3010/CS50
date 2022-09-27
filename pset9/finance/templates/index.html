@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<header class="alert alert-primary border text-center" role="alert">
+  {{ message }}
+</header>
+{% endif %}
+{% endwith %}
+
+{% block main %}
+
+<table class="table home_table">
+    <p style="text-align: left;"><font size="7">Your infomation</font></p>
+    <thead>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>Total</th>
+    </thead>
+    <tbody>
+        {% for stock in stocks %}
+            <tr>
+                <td>{{stock.name}}</td>
+                <td>{{stock.symbol}}</td>
+                <td>{{stock.shares}}</td>
+                <td>{{stock.price | usd}}</td>
+                <td>{{stock.total | usd}}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{user_cash.cash | usd}}</td>
+        </tr>
+    <tfoot>
+        <td style="background: #d7e5f7">TOTAL</td>
+        <td style="background: #d7e5f7"></td>
+        <td style="background: #d7e5f7"></td>
+        <td style="background: #d7e5f7"></td>
+        <td style="background: #d7e5f7">{{total_cash | usd}}</td>
+    </tfoot>
+    </tbody>
+</table>
+{% endblock %}

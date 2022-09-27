@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                let button1 = document.querySelector("#sel1");
+                let button2 = document.querySelector("#sel2");
+                let button3 = document.querySelector("#sel3");
+                let button4 = document.querySelector("#sel4");
+                let button5 = document.querySelector("#sel5");
+
+                button1.onclick = function() {
+                    //Part1
+                    //1番目のボタンが押されたとき
+                    button1.style.backgroundColor = "red";
+                    document.querySelector("#incorrect").style.display = "block";
+                    document.querySelector("#correct").style.display = "none";
+                }
+                button2.onclick = function() {
+                    //2番目のボタンが押されたとき
+                    button2.style.backgroundColor = "red";
+                    document.querySelector("#incorrect").style.display = "block";
+                    document.querySelector("#correct").style.display = "none";
+                }
+                button3.onclick = function() {
+                    //3番目のボタンが押されたとき
+                    button3.style.backgroundColor = "red";
+                    document.querySelector("#incorrect").style.display = "block";
+                    document.querySelector("#correct").style.display = "none";
+                }
+                button4.onclick = function() {
+                    //4番目のボタンが押されたとき
+                    button4.style.backgroundColor = "green";
+                    document.querySelector("#correct").style.display = "block";
+                    document.querySelector("#incorrect").style.display = "none";
+                }
+                button5.onclick = function() {
+                    //5番目のボタンが押されたとき
+                    button5.style.backgroundColor = "red";
+                    document.querySelector("#incorrect").style.display = "block";
+                    document.querySelector("#correct").style.display = "none";
+                }
+
+                //Part2
+
+                let box = document.querySelector("#box");
+                let button = document.querySelector("#button");
+
+                button.onclick = function(){
+                    if (box.value && box.value == "shivering"){
+                        box.style.backgroundColor = "green";
+                        document.querySelector("#correct_2").style.display = "block";
+                        document.querySelector("#incorrect_2").style.display = "none";
+
+                    }else if (box.value){
+                        box.style.backgroundColor = "red";
+                        document.querySelector("#incorrect_2").style.display = "block";
+                        document.querySelector("#correct_2").style.display = "none";
+                    }
+                }
+
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>How long does it take to connect the blood vessels in the human body?</h3>
+                <h3 id = "correct" style="display:none">Correct!</h3>
+                <h3 id = "incorrect" style="display:none">Incorrect</h3>
+                <button id = "sel1">42 kilometers</button>
+                <button id = "sel2">500 kilometers</button>
+                <button id = "sel3">1,000 kilometers</button>
+                <button id = "sel4">100,000 kilometers</button>
+                <button id = "sel5">500,000 kilometers</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What is the name of the phenomenon that trembles after peeing?</h3>
+                <h3 id = "correct_2" style="display:none">Correct!</h3>
+                <h3 id = "incorrect_2" style="display:none">Incorrect</h3>
+                <input id = "box" type = "text">
+                <input id = "button" type = "submit" value = "Check Answer">
+
+            </div>
+
+        </div>
+    </body>
+</html>

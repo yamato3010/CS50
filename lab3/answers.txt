@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: The difference in time taken between sorted5000.txt and sorted50000 (Ω) was less than that of sort2
+
+sort2 uses: Merge Sort
+
+How do you know?: In any text file, sort2 took the shortest time. Also, sorted5000.txt and sorted50000 (Ω) took almost the same amount of time.
+
+sort3 uses: Selection Sort
+
+How do you know?: The difference in the time taken between sorted5000.txt and sorted50000 (Ω) was larger than that of sort1.    
